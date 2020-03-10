@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WebCrawler</title>
+
+    <style>
+        .form-area {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<div th:if="${response.url}">
+    <p>Crawled <b th:text="${response.url}"></b> found <span th:text="${response.totalPages}"></span> links in <span th:text="${response.durationSeconds}"></span> seconds</p>
+
+    <p th:each="link: ${response.pages}">
+        <a th:text="${link}" th:href="${link}"></a>
+    </p>
+</div>
+</body>
+</html>

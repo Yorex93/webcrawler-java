@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WebCrawler</title>
+
+    <style>
+        .form-area {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-area">
+    <form action="#" th:action="@{/}" method="post" th:object="${crawlRequest}" >
+        <label for="url">Enter Site URL</label>
+        <input type="url" id="url" th:field="*{url}"/>
+
+        <label for="url">No Of Workers</label>
+        <input type="number" id="numberOfWorkers" th:field="*{noOfWorkers}"/>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
